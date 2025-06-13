@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test of BHB</title>
+</head>
+<body>
+
+<h1>BHB</h1>
+<pre id="preTest"></pre>
+
+<script type="module">
+    import {HttpClient} from '../HttpClient/HttpClient.js'
+    import {inject} from '../Core/Injecter/injecter.js'
+
+    let client = inject(HttpClient)
+
+    client.getAllData().then((data) => {
+        document.querySelector('#preTest').textContent = String(data)
+    })
+
+</script>
+</body>
+</html>
